@@ -1,3 +1,6 @@
 {
-
+  "countries": {
+    "pl": "Poland",
+    "us" : "United States"
+  }
 }

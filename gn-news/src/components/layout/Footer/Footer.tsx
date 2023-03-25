@@ -1,14 +1,15 @@
-import { Button, chakra, Flex, Text, VStack } from "@chakra-ui/react";
+import { Button, chakra, Flex, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import Clock from "./Clock";
+
+import { Clock } from "./parts";
 
 const Footer = () => {
   return (
     <Flex
       w="full"
       _dark={{ bg: "#3e3e3e" }}
-      p={50}
-      alignItems="center"
+      p={10}
+      alignItems="flex-end"
       justifyContent="center"
     >
       <Flex

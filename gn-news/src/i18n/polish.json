@@ -1,3 +1,9 @@
 {
-
+  "articles": {
+    "header": "Najnowsze artykuły"
+  },
+  "countries": {
+    "pl": "Polska",
+    "us" : "Stany Zjednoczone"
+  }
 }

@@ -1,9 +1,9 @@
-import { Articles } from "components"
+import { Articles } from "components";
 
 const CountryNewsPage = () => {
   return (
-    <Articles />
-  )
-}
+      <Articles />
+  );
+};
 
-export default CountryNewsPage
+export default CountryNewsPage;

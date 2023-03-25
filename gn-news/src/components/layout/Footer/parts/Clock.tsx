@@ -17,7 +17,7 @@ const Clock = () => {
   }, [])
 
   return (
-    <Text>{format(date, "pp", { locale: pl })}</Text>
+    <Text fontSize="xl">{format(date, "pp", { locale: pl })}</Text>
   )
 }
 

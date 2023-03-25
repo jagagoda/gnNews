@@ -1,6 +1,4 @@
-import Footer from "./Footer";
-import Header from "./Header";
 import Articles from "./Articles";
-import SideMenu from "./SideMenu";
+import Flag from "./Flag";
 
-export { Footer, Header, Articles, SideMenu };
+export { Articles, Flag };
