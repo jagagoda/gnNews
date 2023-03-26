@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 
 import { AppRouting } from "routing";
 import i18nInstance from "i18n";
-import store from "redux/store";
+import store from "store";
 
 const App = () => {
   return (

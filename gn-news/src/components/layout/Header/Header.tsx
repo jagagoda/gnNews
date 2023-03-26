@@ -4,20 +4,17 @@ import {
   CloseButton,
   Flex,
   HStack,
-  Icon,
   IconButton,
   VStack,
   chakra,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineInbox, AiOutlineMenu } from "react-icons/ai";
-import { HiOutlineViewGrid, HiViewList } from "react-icons/hi";
 import { GiNewspaper } from "react-icons/gi";
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { AboutMePopover } from "./parts";
-import LanguagePicker from "./parts/LanguagePicker";
+
+import { AboutMePopover, ArticlesViewChanger, LanguagePicker } from "./parts";
 
 export default function App() {
   const mobileNav = useDisclosure();
@@ -87,23 +84,7 @@ export default function App() {
           >
             <HStack spacing="5" display={{ base: "none", md: "flex" }}>
               <LanguagePicker />
-              <Text>View:</Text>
-              <Icon
-                as={HiOutlineViewGrid}
-                display="block"
-                transition="color 0.2s"
-                w="5"
-                h="5"
-                _hover={{ color: "gray.600" }}
-              />
-              <Icon
-                as={HiViewList}
-                display="block"
-                transition="color 0.2s"
-                w="5"
-                h="5"
-                _hover={{ color: "gray.600" }}
-              />
+              <ArticlesViewChanger />
               <AboutMePopover />
             </HStack>
             <IconButton

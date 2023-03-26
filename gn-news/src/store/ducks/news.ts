@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "redux/store";
+
+type View = "cards" | "list";
 
 type InitialState = {
-  view: "cards" | "list";
+  view: View;
   data: {
     isLoading: boolean;
     records: Array<any>;
@@ -23,6 +24,9 @@ const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
+    changeView: (state, { payload }) => {
+      state.view = payload.view;
+    },
     initDataDownload: (state) => {
       state.data.isLoading = true;
       state.data.records = [];
@@ -45,3 +49,4 @@ const { actions: newsActions, reducer } = newsSlice;
 
 export default reducer;
 export { newsActions };
+export type {View};

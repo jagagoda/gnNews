@@ -2,7 +2,7 @@ import { NewsApi } from "api";
 import { useDispatch } from "react-redux";
 
 import { Country } from "config/countries";
-import { newsActions } from "redux/ducks/news";
+import { newsActions } from "store/ducks/news";
 
 const useGetArticles = () => {
   const dispatch = useDispatch();

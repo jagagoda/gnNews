@@ -1,9 +1,18 @@
 {
   "articles": {
-    "header": "Najnowsze artykuły"
+    "header": "Najnowsze artykuły",
+    "count": "Liczba wyświetlonych artykułów",
+    "alerts": {
+      "invalidCountry": "Nieprawidłowy kraj",
+      "error": "Wystąpił błąd podczas komunikacji z serwisem"
+    }
   },
   "countries": {
     "pl": "Polska",
     "us" : "Stany Zjednoczone"
+  },
+  "languages": {
+    "pl": "polski",
+    "us": "angielski"
   }
 }

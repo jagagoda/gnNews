@@ -1,7 +1,7 @@
-import { Button, chakra, Flex, VStack } from "@chakra-ui/react";
+import { Button, Flex, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-import { Clock } from "./parts";
+import { ArticlesCount, Clock } from "./parts";
 
 const Footer = () => {
   return (
@@ -38,13 +38,7 @@ const Footer = () => {
         </VStack>
 
         <Flex mx="-2">
-          <chakra.p
-            py={{ base: "2", sm: "0" }}
-            color="gray.800"
-            _dark={{ color: "white" }}
-          >
-            Liczba wyświetlonych artykułów: 12
-          </chakra.p>
+          <ArticlesCount />
         </Flex>
       </Flex>
     </Flex>

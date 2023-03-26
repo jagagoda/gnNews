@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  GridItem,
   Center,
-  Grid,
   Box,
   Text,
   VStack,
@@ -10,15 +8,18 @@ import {
   AlertIcon,
   AlertTitle,
   Spinner,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import ArticleCard from "components/ArticleCard";
 import countries, { Country } from "config/countries";
 import { useGetArticles } from "hooks";
-import { selectNewsData } from "redux/selectors";
+import { selectNewsData, selectNewsView } from "store/selectors";
+
+import { ArticleCard, ArticleListItem } from "./parts";
 
 type Params = {
   country: Country;
@@ -29,7 +30,8 @@ const Articles = () => {
   const { country } = useParams<Params>();
   const { fetch } = useGetArticles();
   const [invalidCountry, setInvalidCountry] = useState<boolean>(false);
-  const { isLoading, error, data } = useSelector(selectNewsData);
+  const { isLoading, error, records } = useSelector(selectNewsData);
+  const view = useSelector(selectNewsView);
 
   useEffect(() => {
     if (!country || !countries.includes(country)) {
@@ -45,13 +47,13 @@ const Articles = () => {
     return (
       <Alert status="error">
         <AlertIcon />
-        <AlertTitle>{t("articles:invalidCountry")}</AlertTitle>
+        <AlertTitle>{t("articles:alerts.invalidCountry")}</AlertTitle>
       </Alert>
     );
   }
 
   return (
-    <VStack>
+    <VStack w="full">
       <Box w="full" bg="gray.100" marginBottom="5">
         <Center>
           <Text fontSize="2xl" p="8">
@@ -60,38 +62,39 @@ const Articles = () => {
         </Center>
       </Box>
 
-      {isLoading &&
-         <Spinner size='xl' />
-      }
+      {error && (
+        <Alert status="error">
+          <AlertIcon />
+          <AlertTitle>{t("articles:alerts.error")}</AlertTitle>
+        </Alert>
+      )}
+
+      {isLoading && <Spinner size="xl" />}
 
       {!isLoading && (
-        <Grid
-          templateRows="repeat(2, 1fr)"
-          templateColumns="repeat(8, 1fr)"
-          gap={4}
-        >
-          <GridItem rowSpan={1} colSpan={4}>
-            <ArticleCard />
-          </GridItem>
-          <GridItem colSpan={2}>
-            <ArticleCard />
-          </GridItem>
-          <GridItem colSpan={2}>
-            <ArticleCard />
-          </GridItem>
-          <GridItem colSpan={2}>
-            <ArticleCard />
-          </GridItem>
-          <GridItem colSpan={2}>
-            <ArticleCard />
-          </GridItem>
-          <GridItem colSpan={2}>
-            <ArticleCard />
-          </GridItem>
-          <GridItem colSpan={2}>
-            <ArticleCard />
-          </GridItem>
-        </Grid>
+        <Wrap gap={4}>
+          {records.map((article, key) => {
+            if (view === "cards") {
+              return (
+                <WrapItem
+                  key={key}
+                  w={{
+                    base: "100%",
+                    lg: "49%",
+                  }}
+                >
+                  <ArticleCard {...article} />
+                </WrapItem>
+              );
+            }
+
+            return(
+              <WrapItem key={key} w="100%">
+                <ArticleListItem {...article} />
+              </WrapItem>
+            )
+          })}
+        </Wrap>
       )}
     </VStack>
   );

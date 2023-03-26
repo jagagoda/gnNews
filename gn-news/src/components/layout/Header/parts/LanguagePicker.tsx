@@ -1,4 +1,5 @@
 import {
+  chakra,
   Menu,
   MenuButton,
   Button,
@@ -21,23 +22,31 @@ const LanguagePicker = () => {
   };
 
   return (
-    <Menu>
-      <MenuButton as={Button} rightIcon={
-        <Flag country={language as Language} />
-      }>
-        {t(`languages:${language}`)}
-      </MenuButton>
-      <MenuList>
-        {languages.filter(listLanguage => listLanguage !== language).map((language, key) => {
-          return (
-            <MenuItem key={key} onClick={() => handleLanguageChange(language)}>
-              <Flag country={language} />
-              <Text ml="2">{t(`languages:${language}`)}</Text>
-            </MenuItem>
-          );
-        })}
-      </MenuList>
-    </Menu>
+    <chakra.div>
+      <Menu>
+        <MenuButton
+          as={Button}
+          rightIcon={<Flag country={language as Language} />}
+        >
+          {t(`languages:${language}`)}
+        </MenuButton>
+        <MenuList>
+          {languages
+            .filter((listLanguage) => listLanguage !== language)
+            .map((language, key) => {
+              return (
+                <MenuItem
+                  key={key}
+                  onClick={() => handleLanguageChange(language)}
+                >
+                  <Flag country={language} />
+                  <Text ml="2">{t(`languages:${language}`)}</Text>
+                </MenuItem>
+              );
+            })}
+        </MenuList>
+      </Menu>
+    </chakra.div>
   );
 };
 

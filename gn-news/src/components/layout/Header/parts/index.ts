@@ -1,3 +1,5 @@
 import AboutMePopover from './AboutMePopover'
+import LanguagePicker from './LanguagePicker';
+import ArticlesViewChanger from './ArticlesViewChanger';
 
-export { AboutMePopover };
+export { AboutMePopover, ArticlesViewChanger, LanguagePicker };
