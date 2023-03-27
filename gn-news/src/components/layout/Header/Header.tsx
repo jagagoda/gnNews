@@ -58,20 +58,23 @@ export default function App() {
     <Box pos="relative">
       <chakra.header
         transition="box-shadow 0.2s"
-        bg="white"
+        bg="#ADD1DB"
         w="full"
         overflowY="hidden"
         boxShadow="0px 1px 2px #EDEDF7"
+        p={5}
       >
         <Flex w="full" h="full" px="6" align="center" justify="space-between">
           <Button
             as={Link}
             to="/"
             variant="link"
-            color="#030303"
+            color="#fff"
             size="lg"
+            fontSize='20px'
             width="120"
             leftIcon={<GiNewspaper />}
+            _hover={{color: "#6B8187"}}
           >
             GN NEWS
           </Button>
@@ -82,12 +85,13 @@ export default function App() {
             align="center"
             color="gray.400"
           >
-            <HStack spacing="5" display={{ base: "none", md: "flex" }}>
-              <LanguagePicker />
+            <HStack spacing="2" display={{ base: "none", md: "flex" }}>
               <ArticlesViewChanger />
+              <LanguagePicker />
               <AboutMePopover />
             </HStack>
             <IconButton
+              colorScheme="white"
               display={{ base: "flex", md: "none" }}
               aria-label="Open menu"
               fontSize="20px"

@@ -25,17 +25,21 @@ const LanguagePicker = () => {
     <chakra.div>
       <Menu>
         <MenuButton
+          bg="transparent"
+          color="#fff"
           as={Button}
           rightIcon={<Flag country={language as Language} />}
+          _hover={{ color: "#6B8187", textDecoration: "underline" }}
         >
           {t(`languages:${language}`)}
         </MenuButton>
-        <MenuList>
+        <MenuList  _hover={{textDecoration: "underline" }}>
           {languages
             .filter((listLanguage) => listLanguage !== language)
             .map((language, key) => {
               return (
                 <MenuItem
+                  bg="transparent"
                   key={key}
                   onClick={() => handleLanguageChange(language)}
                 >

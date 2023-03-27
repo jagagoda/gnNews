@@ -54,9 +54,9 @@ const Articles = () => {
 
   return (
     <VStack w="full">
-      <Box w="full" bg="gray.100" marginBottom="5">
+      <Box w="full" bg="white" marginBottom="5">
         <Center>
-          <Text fontSize="2xl" p="8">
+          <Text fontSize="2xl" p="8"  textTransform="uppercase" color="#708087">
             {t("articles:header")} {t(`countries:${country}`)}
           </Text>
         </Center>
@@ -80,7 +80,7 @@ const Articles = () => {
                   key={key}
                   w={{
                     base: "100%",
-                    lg: "49%",
+                    lg: "32%",
                   }}
                 >
                   <ArticleCard {...article} />

@@ -7,7 +7,7 @@ const AppRouting = () => {
   return (
     <Container>
     <Routes>
-        <Route path="/" element={<Navigate replace to="/country/pl" />} />
+        <Route path="/" element={<Navigate replace to="/country/us" />} />
         <Route path="/country/:country" element={<CountryNewsPage />} />
         <Route path="*" element={<ErrorPage />} />
     </Routes>

@@ -1,6 +1,35 @@
 {
+  "articles": {
+    "header": "Top headlines from",
+    "count": "The number of currently displayed articles",
+    "alerts": {
+      "invalidCountry": "Wrong country",
+      "error": "An error occurred while communicating with the server"
+    },
+    "modal": {
+      "close": "Close"
+    }
+  },
   "countries": {
     "pl": "Poland",
-    "us" : "United States"
+    "us": "United States",
+    "ca": "Canada",
+    "ro": "Romania",
+    "tw": "Taiwan",
+    "it": "Italy",
+    "jp": "Japan"
+  },
+  "languages": {
+    "pl": "Polish",
+    "us": "English"
+  },
+  "homePage": {
+    "aboutMe": {
+      "button": "About me",
+      "content": "Blabla",
+      "header": "Pro and blabla"
+    },
+    "sideMenuHeader": "News from",
+    "view": "View"
   }
 }

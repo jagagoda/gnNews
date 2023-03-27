@@ -11,12 +11,10 @@ const Container: FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-
-      <Stack direction="row" gap="2" px="4">
+      <Stack direction="row" gap="2">
         <SideMenu />
         {children}
       </Stack>
-
       <Footer />
     </>
   );

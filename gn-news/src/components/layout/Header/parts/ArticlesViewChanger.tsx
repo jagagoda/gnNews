@@ -27,15 +27,21 @@ const ArticlesViewChanger = () => {
 
   return (
     <>
-      <Text>{t("articles:view")}:</Text>
+      <Text color="#fff">{t("homePage:view")}:</Text>
       {Object.entries(modes).map(([key, Icon]) => {
         return (
           <IconButton
             key={key}
-            colorScheme={view === key ? "green" : "blue"}
+            color={view === key ? "#6B8187  " : "#fff"}
+            colorScheme={view === key ? "#6B8187" : "white"}
             aria-label={t(`articles:view.${key}`)}
             icon={<Icon />}
             onClick={() => handleViewChange(key as View)}
+            _hover={{ color: "#6B8187" }}
+            size="md"
+            margin="0"
+            padding="0"
+            gap={0}
           />
         );
       })}

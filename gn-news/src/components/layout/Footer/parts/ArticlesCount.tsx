@@ -10,8 +10,8 @@ const ArticlesCount = () => {
 
   return (
     <chakra.p
+      color="#fff"
       py={{ base: "2", sm: "0" }}
-      color="gray.800"
       _dark={{ color: "white" }}
     >
       {t("articles:count")}: {records.length}

@@ -6,6 +6,7 @@ import {
   Image,
   Link,
   useDisclosure,
+  Stack,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
 
@@ -18,16 +19,18 @@ const ArticleCard: FC<Article> = ({
   publishedAt,
   title,
   content,
+  url,
   urlToImage,
+  source,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       <Flex
-        bg="#edf3f8"
+        bg="transparent"
         _dark={{ bg: "#3e3e3e" }}
-        p={50}
+        p={5}
         w="full"
         h="full"
         alignItems="center"
@@ -37,9 +40,10 @@ const ArticleCard: FC<Article> = ({
           mx="auto"
           rounded="lg"
           shadow="md"
-          bg="white"
           w="full"
-          _dark={{ bg: "gray.800" }}
+          minHeight="100%"
+          bg="#ADD1DB"
+          color="#fff"
         >
           <Image
             roundedTop="lg"
@@ -52,17 +56,29 @@ const ArticleCard: FC<Article> = ({
             }
             alt="Article"
           />
-
-          <Box p={4}>
-            <Box>
+          <Flex
+            p={5}
+            justifyContent="space-between"
+            direction="column"
+            height="full"
+          >
+            <Flex justifyContent="space-between" w="full">
               <chakra.span
-                fontSize="xs"
+                fontSize="sm"
                 textTransform="uppercase"
-                color="brand.600"
+                color="#fff"
                 _dark={{ color: "brand.400" }}
               >
                 {format(Date.parse(publishedAt), "dd.MM.yyyy HH:ii")}
               </chakra.span>
+              <chakra.span
+                mx={2}
+                fontWeight="bold"
+                color="#fff"
+              >
+                {source?.name}
+              </chakra.span>
+              </Flex>
               <Link
                 display="block"
                 fontWeight="bold"
@@ -75,28 +91,14 @@ const ArticleCard: FC<Article> = ({
               <chakra.p
                 mt={2}
                 fontSize="sm"
-                color="gray.600"
+                color="#fff"
                 _dark={{ color: "gray.400" }}
               >
                 {description}
               </chakra.p>
-            </Box>
-
-            <Box mt={4}>
-              <Flex alignItems="center">
-                <Flex alignItems="center">
-                  <chakra.span
-                    mx={2}
-                    fontWeight="bold"
-                    color="gray.700"
-                    _dark={{ color: "gray.200" }}
-                  >
-                    {author}
-                  </chakra.span>
-                </Flex>
-              </Flex>
-            </Box>
-          </Box>
+              {" "}
+            
+          </Flex>
         </Box>
       </Flex>
 
@@ -105,6 +107,8 @@ const ArticleCard: FC<Article> = ({
         onClose={onClose}
         title={title}
         content={content}
+        author={author}
+        url={url}
       />
     </>
   );

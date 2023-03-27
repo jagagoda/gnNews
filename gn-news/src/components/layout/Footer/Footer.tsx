@@ -1,5 +1,4 @@
-import { Button, Flex, VStack } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Flex, VStack } from "@chakra-ui/react";
 
 import { ArticlesCount, Clock } from "./parts";
 
@@ -7,10 +6,12 @@ const Footer = () => {
   return (
     <Flex
       w="full"
-      _dark={{ bg: "#3e3e3e" }}
-      p={10}
+      p={2}
       alignItems="flex-end"
       justifyContent="center"
+      bg="#ADD1DB"
+      borderTop="1px #EDEDF7"
+      marginTop="1px"
     >
       <Flex
         w="full"
@@ -20,29 +21,21 @@ const Footer = () => {
         justify="space-between"
         px="6"
         py="4"
-        bg="white"
-        _dark={{
-          bg: "gray.800",
-        }}
       >
-        <Button as={Link} to="/" variant="link" color="#030303">
-          GN NEWS
-        </Button>          
-
         <VStack
           py={{ base: "2", sm: "0" }}
           color="gray.800"
           _dark={{ color: "white" }}
         >
-          <Clock />
-        </VStack>
-
-        <Flex mx="-2">
+          {" "}
           <ArticlesCount />
+        </VStack>
+        <Flex mx="-2">
+          <Clock />
         </Flex>
       </Flex>
     </Flex>
   );
 };
 
-export default Footer
+export default Footer;

@@ -1,18 +1,35 @@
 {
   "articles": {
-    "header": "Najnowsze artykuły",
+    "header": "Najnowsze artykuły z kraju",
     "count": "Liczba wyświetlonych artykułów",
     "alerts": {
       "invalidCountry": "Nieprawidłowy kraj",
       "error": "Wystąpił błąd podczas komunikacji z serwisem"
+    },
+    "modal": {
+      "close": "Zamknij"
     }
   },
   "countries": {
     "pl": "Polska",
-    "us" : "Stany Zjednoczone"
+    "us": "Stany Zjednoczone",
+    "ca": "Kanada",
+    "ro": "Rumunia",
+    "tw": "Tajwan",
+    "it": "Włochy",
+    "jp": "Japonia"
   },
   "languages": {
-    "pl": "polski",
-    "us": "angielski"
+    "pl": "Polski",
+    "us": "Angielski"
+  },
+  "homePage": {
+    "aboutMe": {
+    "button": "O mnie",
+    "header": "Trudności i frajda",
+    "content": "Blabla"
+    },
+    "sideMenuHeader": "Wiadomości z",
+    "view": "Widok"
   }
 }

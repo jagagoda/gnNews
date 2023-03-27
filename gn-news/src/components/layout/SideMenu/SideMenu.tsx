@@ -9,17 +9,21 @@ const SideMenu = () => {
   const { t } = useTranslation();
 
   return (
-    <chakra.nav px="8">
+    <chakra.nav px="8" paddingTop="10" bg="#ADD1DB">
       <List spacing="8">
-        <Text fontSize="xl">Select a country...</Text>
+        <Text fontSize="xl" color="#fff">{t(`homePage:sideMenuHeader`)}...</Text>
         {countries.map((key) => {
           return (
-            <ListItem minWidth="10rem" key={key}>
+            <ListItem w="full" key={key}>
               <Button
                 as={Link}
                 to={`/country/${key}`}
                 variant="link"
                 leftIcon={<Flag country={key} />}
+                _hover={{ color: "#6B8187" }}
+                p={2}
+                fontSize="lg"
+                color="#fff"
               >
                 {t(`countries:${key}`)}
               </Button>

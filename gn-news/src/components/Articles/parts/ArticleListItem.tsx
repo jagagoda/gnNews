@@ -5,8 +5,7 @@ import {
   Image,
   Link,
   useDisclosure,
-  VStack,
-  HStack,
+  Stack,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
 
@@ -19,6 +18,8 @@ const ArticleListItem: FC<Article> = ({
   publishedAt,
   title,
   content,
+  url,
+  source,
   urlToImage,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -26,18 +27,20 @@ const ArticleListItem: FC<Article> = ({
   return (
     <>
       <Flex
-        bg="#edf3f8"
+        bg="transparent"
         _dark={{ bg: "#3e3e3e" }}
-        py={4}
-        px={8}
+        py={50}
+        px={50}
         w="full"
         h="full"
         alignItems="center"
         gap={4}
       >
         <Image
-          roundedLeft="lg"
-          w={128}
+        border="10px solid #ADD1DB"
+          rounded="md"
+          w={300}
+          h={200}
           fit="cover"
           src={
             urlToImage ??
@@ -46,51 +49,57 @@ const ArticleListItem: FC<Article> = ({
           alt="Article"
         />
 
-        <VStack>
-          <Link
-            display="block"
-            fontWeight="bold"
-            fontSize="xl"
-            mt={2}
-            onClick={onOpen}
-          >
-            {title}
-          </Link>
-          <chakra.p
-            mt={2}
-            fontSize="sm"
-            color="gray.600"
-            _dark={{ color: "gray.400" }}
-          >
-            {description}
-          </chakra.p>
-
-          <HStack>
+        <Flex justifyContent="space-between" direction="column" height="full">
+          <Stack>
             <chakra.span
-              fontSize="xs"
+              fontSize="sm"
               textTransform="uppercase"
               color="brand.600"
               _dark={{ color: "brand.400" }}
             >
               {format(Date.parse(publishedAt), "dd.MM.yyyy HH:ii")}
             </chakra.span>
-            <chakra.span
-              mx={2}
+
+            <Link
+              display="block"
               fontWeight="bold"
-              color="gray.700"
-              _dark={{ color: "gray.200" }}
+              fontSize="xl"
+              onClick={onOpen}
             >
-              {author}
-            </chakra.span>
-          </HStack>
-        </VStack>
-      </Flex>
+              {title}
+            </Link>
+
+            <chakra.p
+              mt={2}
+              fontSize="sm"
+              color="gray.600"
+              _dark={{ color: "gray.400" }}
+            >
+              {description}
+            </chakra.p>
+          </Stack>
+          <chakra.span
+            mx={2}
+            fontWeight="bold"
+            color="gray.700"
+            _dark={{ color: "gray.200" }}
+            textTransform="uppercase"
+            fontSize="sm"
+          >
+            {source?.name}
+          </chakra.span>
+        </Flex>
+       
+      </Flex> 
+      
 
       <ArticleModal
         isOpen={isOpen}
         onClose={onClose}
         title={title}
         content={content}
+        author={author}
+        url={url}
       />
     </>
   );
