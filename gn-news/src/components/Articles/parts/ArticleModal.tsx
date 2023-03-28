@@ -9,8 +9,16 @@ import {
   Button,
   Text,
   chakra,
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogCloseButton,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -34,10 +42,16 @@ const ArticleModal: FC<Props> = ({
   url,
 }) => {
   const { t } = useTranslation();
+  const {
+    isOpen: isAlertOpen,
+    onOpen: onAlertOpen,
+    onClose: onAlertClose,
+  } = useDisclosure();
+  const cancelRef = useRef(null);
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent p={5} bg="#ADD1DB" color="#fff">
+      <ModalContent p={5} bg="baseBlueBackground" color="baseFontLight">
         <ModalHeader>{title}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>{content}</ModalBody>
@@ -48,20 +62,59 @@ const ArticleModal: FC<Props> = ({
           {" "}
           <chakra.div overflow="hidden">
             <Button
-              as={Link}
-              to={url}
-              variant="link"
-              target="_blank"
-              color="#fff"
-              _hover={{ color: "#708087" }}
+              onClick={onAlertOpen}
+              color="baseFontLight"
+              bg="transparent"
+              p={0}
+              _hover={{ color: "baseFontHoverLight" }}
             >
               <Text> [{t("articles:modal.readMore")}]</Text>
             </Button>
+            <AlertDialog
+              motionPreset="slideInBottom"
+              leastDestructiveRef={cancelRef}
+              onClose={onAlertClose}
+              isOpen={isAlertOpen}
+              isCentered
+            >
+              <AlertDialogOverlay />
+
+              <AlertDialogContent>
+                <AlertDialogHeader>{t("articles:modal.linkAlert.header")}</AlertDialogHeader>
+                <AlertDialogCloseButton />
+                <AlertDialogBody>
+                {t("articles:modal.linkAlert.content")}
+                </AlertDialogBody>
+                <AlertDialogFooter>
+                  <Button
+                    ref={cancelRef}
+                    onClick={onAlertClose}
+                    color="baseFontDark"
+                    bg="transparent"
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    {t("articles:modal.linkAlert.no")}
+                  </Button>
+                  <Button
+                    onClick={onAlertClose}
+                    as={Link}
+                    to={url}
+                    variant="link"
+                    target="_blank"
+                    ml={3}
+                    color="baseFontDark"
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    {t("articles:modal.linkAlert.yes")}
+                  </Button>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </chakra.div>
         </ModalBody>
 
         <ModalFooter>
-          <Button bg="#708087" mr={3} onClick={onClose}>
+          <Button bg="#fff" color="baseFontDark" mr={3} onClick={onClose}>
             {t("articles:modal.close")}
           </Button>
         </ModalFooter>

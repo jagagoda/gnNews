@@ -28,7 +28,6 @@ const ArticleListItem: FC<Article> = ({
     <>
       <Flex
         bg="transparent"
-        _dark={{ bg: "#3e3e3e" }}
         py={50}
         px={50}
         w="full"
@@ -37,11 +36,11 @@ const ArticleListItem: FC<Article> = ({
         gap={4}
         direction={{
           base: "column",
-          md: "row"
+          md: "row",
         }}
       >
         <Image
-          border="10px solid #ADD1DB"
+          border="10px solid #BFC0DE"
           rounded="md"
           w={300}
           h={200}
@@ -58,8 +57,7 @@ const ArticleListItem: FC<Article> = ({
             <chakra.span
               fontSize="sm"
               textTransform="uppercase"
-              color="brand.600"
-              _dark={{ color: "brand.400" }}
+              color="baseFontDark"
             >
               {format(Date.parse(publishedAt), "dd.MM.yyyy HH:ii")}
             </chakra.span>
@@ -73,20 +71,14 @@ const ArticleListItem: FC<Article> = ({
               {title}
             </Link>
 
-            <chakra.p
-              mt={2}
-              fontSize="sm"
-              color="gray.600"
-              _dark={{ color: "gray.400" }}
-            >
+            <chakra.p mt={2} fontSize="sm" color="baseFontDark">
               {description}
             </chakra.p>
           </Stack>
           <chakra.span
             mx={2}
             fontWeight="bold"
-            color="gray.700"
-            _dark={{ color: "gray.200" }}
+            color="baseFontDark"
             textTransform="uppercase"
             fontSize="sm"
           >

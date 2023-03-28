@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, chakra } from "@chakra-ui/react";
+import { Box, Flex, HStack, chakra } from "@chakra-ui/react";
 
 import {
   AboutMePopover,
@@ -12,7 +12,7 @@ export default function App() {
     <Box pos="relative">
       <chakra.header
         transition="box-shadow 0.2s"
-        bg="#ADD1DB"
+        bg="baseBlueBackground"
         w="full"
         overflowY="hidden"
         boxShadow="0px 1px 2px #EDEDF7"
@@ -21,7 +21,6 @@ export default function App() {
       >
         <Flex w="full" h="full" px="6" align="center" justify="space-between">
           <Logo />
-
           <HStack spacing={{ base: 0, md: 2 }}>
             <ArticlesViewChanger />
             <LanguagePicker />

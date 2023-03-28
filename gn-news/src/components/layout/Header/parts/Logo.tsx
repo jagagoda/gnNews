@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-import pigeon from "assets/pigeon.png"
+import pigeon from "assets/pigeon.png";
 
 const Logo = () => {
   return (
@@ -9,12 +9,12 @@ const Logo = () => {
       as={Link}
       to="/"
       variant="link"
-      color="#fff"
+      color="baseFontLight"
       size="lg"
       fontSize="20px"
       width="120"
-      leftIcon={<img src={pigeon} width="24px" height="24px" alt="GN NEWS" />}
-      _hover={{ color: "#6B8187" }}
+      leftIcon={<img src={pigeon} width="28px" height="28px" alt="GN NEWS" />}
+      _hover={{ color: "baseFontHoverLight" }}
     >
       GN NEWS
     </Button>

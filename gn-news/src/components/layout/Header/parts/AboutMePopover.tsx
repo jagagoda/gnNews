@@ -32,13 +32,13 @@ const AboutMePopover = () => {
               </chakra.span>
             </>
           }
-          _hover={{ color: "#6B8187", textDecoration: "underline" }}
+          _hover={{ color: "baseFontHoverLight", textDecoration: "underline" }}
           bg="transparent"
           color="#fff"
         />
       </PopoverTrigger>
       <PopoverContent
-        bg="white"
+        bg="#fff"
         color="#030303"
         border="1px solid #gray.300"
         boxShadow="0 4px 6px -6px #222"
@@ -48,8 +48,8 @@ const AboutMePopover = () => {
           {" "}
           {t("homePage:aboutMe.header")}
         </PopoverHeader>
-        <PopoverArrow bg="white" />
-        <PopoverCloseButton bg="white" />
+        <PopoverArrow bg="#fff" />
+        <PopoverCloseButton bg="#fff" />
         <PopoverBody>{t("homePage:aboutMe.content")}</PopoverBody>
       </PopoverContent>
     </Popover>

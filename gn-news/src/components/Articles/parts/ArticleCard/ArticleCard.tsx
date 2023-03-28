@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import { format } from "date-fns";
 
-import { Article } from "../types";
-import ArticleModal from "./ArticleModal";
+import { Article } from "../../types";
+import ArticleModal from "../ArticleModal";
 
 const ArticleCard: FC<Article> = ({
   author,
@@ -28,7 +28,6 @@ const ArticleCard: FC<Article> = ({
     <>
       <Flex
         bg="transparent"
-        _dark={{ bg: "#3e3e3e" }}
         p={5}
         w="full"
         h="full"
@@ -41,8 +40,8 @@ const ArticleCard: FC<Article> = ({
           shadow="md"
           w="full"
           minHeight="100%"
-          bg="#ADD1DB"
-          color="#fff"
+          bg="baseBlueBackground"
+          color="baseFontLight"
         >
           <Image
             roundedTop="lg"
@@ -65,38 +64,27 @@ const ArticleCard: FC<Article> = ({
               <chakra.span
                 fontSize="sm"
                 textTransform="uppercase"
-                color="#fff"
-                _dark={{ color: "brand.400" }}
+                color="baseFontLight"
               >
                 {format(Date.parse(publishedAt), "dd.MM.yyyy HH:ii")}
               </chakra.span>
-              <chakra.span
-                mx={2}
-                fontWeight="bold"
-                color="#fff"
-              >
+              <chakra.span mx={2} fontWeight="bold" color="baseFontLight">
                 {source?.name}
               </chakra.span>
-              </Flex>
-              <Link
-                display="block"
-                fontWeight="bold"
-                fontSize="xl"
-                mt={2}
-                onClick={onOpen}
-              >
-                {title}
-              </Link>
-              <chakra.p
-                mt={2}
-                fontSize="sm"
-                color="#fff"
-                _dark={{ color: "gray.400" }}
-              >
-                {description}
-              </chakra.p>
-              {" "}
-            
+            </Flex>
+            <Link
+              display="block"
+              fontWeight="bold"
+              fontSize="xl"
+              mt={2}
+              onClick={onOpen}
+              data-testid="title"
+            >
+              {title}
+            </Link>
+            <chakra.p mt={2} fontSize="sm" color="baseFontLight">
+              {description}
+            </chakra.p>{" "}
           </Flex>
         </Box>
       </Flex>

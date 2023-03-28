@@ -9,11 +9,7 @@ const ArticlesCount = () => {
   const { records } = useSelector(selectNewsData);
 
   return (
-    <chakra.p
-      color="#fff"
-      py={{ base: "2", sm: "0" }}
-      _dark={{ color: "white" }}
-    >
+    <chakra.p color="baseFontLight" py={{ base: "2", sm: "0" }}>
       {t("articles:count")}: {records.length}
     </chakra.p>
   );

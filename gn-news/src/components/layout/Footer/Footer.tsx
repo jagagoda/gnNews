@@ -9,7 +9,7 @@ const Footer = () => {
       p={2}
       alignItems="flex-end"
       justifyContent="center"
-      bg="#ADD1DB"
+      bg="baseBlueBackground"
       borderTop="1px #EDEDF7"
       marginTop="1px"
     >
@@ -22,11 +22,7 @@ const Footer = () => {
         px="6"
         py="4"
       >
-        <VStack
-          py={{ base: "2", sm: "0" }}
-          color="gray.800"
-          _dark={{ color: "white" }}
-        >
+        <VStack py={{ base: "2", sm: "0" }} color="baseFontDark">
           {" "}
           <ArticlesCount />
         </VStack>

@@ -26,14 +26,16 @@ const LanguagePicker = () => {
       <Menu>
         <MenuButton
           bg="transparent"
-          color="#fff"
+          color="baseFontLight"
           as={Button}
           rightIcon={<Flag country={language as Language} />}
-          _hover={{ color: "#6B8187", textDecoration: "underline" }}
+          _hover={{ color: "baseFontHoverLight", textDecoration: "underline" }}
         >
-          <chakra.span display={{ base: "none", md: "block" }}>{t(`languages:${language}`)}</chakra.span>
+          <chakra.span display={{ base: "none", md: "block" }}>
+            {t(`languages:${language}`)}
+          </chakra.span>
         </MenuButton>
-        <MenuList  _hover={{textDecoration: "underline" }}>
+        <MenuList _hover={{ textDecoration: "underline" }}>
           {languages
             .filter((listLanguage) => listLanguage !== language)
             .map((language, key) => {

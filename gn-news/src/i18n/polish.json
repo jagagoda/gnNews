@@ -8,7 +8,13 @@
     },
     "modal": {
       "close": "Zamknij",
-      "readMore": "Czytaj więcej"
+      "readMore": "Czytaj więcej",
+      "linkAlert": {
+        "header": "Cześć Użytkowniku!",
+        "content": "To jest link zewnętrzny. Czy na pewno chcesz go otworzyć?",
+        "yes": "Tak",
+        "no": "Nie"
+      }
     }
   },
   "countries": {

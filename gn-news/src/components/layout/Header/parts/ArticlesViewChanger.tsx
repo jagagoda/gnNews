@@ -32,12 +32,12 @@ const ArticlesViewChanger = () => {
         return (
           <IconButton
             key={key}
-            color={view === key ? "#6B8187  " : "#fff"}
-            colorScheme={view === key ? "#6B8187" : "white"}
+            color={view === key ? "baseFontMedium" : "baseFontLight"}
+            colorScheme={view === key ? "baseFontMedium" : "baseFontLight"}
             aria-label={t(`articles:view.${key}`)}
             icon={<Icon />}
             onClick={() => handleViewChange(key as View)}
-            _hover={{ color: "#6B8187" }}
+            _hover={{ color: "baseFontHoverLight" }}
             size="md"
           />
         );

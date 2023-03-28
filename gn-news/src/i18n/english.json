@@ -8,7 +8,13 @@
     },
     "modal": {
       "close": "Close",
-      "readMore": "Read more"
+      "readMore": "Read more",
+      "linkAlert": {
+        "header": "Hi User!",
+        "content": " This is an external link. Are you sure you want to open it?",
+        "yes": "Yes",
+        "no": "No"
+      }
     }
   },
   "countries": {
