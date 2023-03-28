@@ -6,7 +6,6 @@ import {
   Image,
   Link,
   useDisclosure,
-  Stack,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
 

@@ -6,11 +6,12 @@ import { Provider } from "react-redux";
 import { AppRouting } from "routing";
 import i18nInstance from "i18n";
 import store from "store";
+import theme from "config/global-styles";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <BrowserRouter>
           <I18nextProvider i18n={i18nInstance}>
             <AppRouting />

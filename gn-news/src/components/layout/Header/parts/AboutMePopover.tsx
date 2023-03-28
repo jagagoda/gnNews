@@ -1,4 +1,5 @@
 import {
+  chakra,
   Button,
   Popover,
   PopoverArrow,
@@ -7,8 +8,10 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
+  Icon,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { FaInfoCircle } from "react-icons/fa";
 
 const AboutMePopover = () => {
   const { t } = useTranslation();
@@ -18,9 +21,17 @@ const AboutMePopover = () => {
         <Button
           role="button"
           aria-label="Some box"
-          p={5}
+          py={5}
+          px={2}
           w="full"
-          children={t("homePage:aboutMe.button")}
+          children={
+            <>
+              <Icon display={{ base: "block", md: "none" }} as={FaInfoCircle} />
+              <chakra.span display={{ base: "none", md: "block" }}>
+                {t("homePage:aboutMe.button")}
+              </chakra.span>
+            </>
+          }
           _hover={{ color: "#6B8187", textDecoration: "underline" }}
           bg="transparent"
           color="#fff"

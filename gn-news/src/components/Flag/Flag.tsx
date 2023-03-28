@@ -12,7 +12,7 @@ type Props = {
 const Flag: FC<Props> = ({ country }) => {
   return (
     <chakra.div width="16px" height="12px">
-      <img src={flags[country]} width="18px" height="14px" alt={country} />
+      <img src={flags[country]} width="16px" height="12px" alt={country} />
     </chakra.div>
   );
 };

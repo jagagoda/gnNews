@@ -31,7 +31,7 @@ const LanguagePicker = () => {
           rightIcon={<Flag country={language as Language} />}
           _hover={{ color: "#6B8187", textDecoration: "underline" }}
         >
-          {t(`languages:${language}`)}
+          <chakra.span display={{ base: "none", md: "block" }}>{t(`languages:${language}`)}</chakra.span>
         </MenuButton>
         <MenuList  _hover={{textDecoration: "underline" }}>
           {languages

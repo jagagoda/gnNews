@@ -9,9 +9,15 @@ const SideMenu = () => {
   const { t } = useTranslation();
 
   return (
-    <chakra.nav px="8" paddingTop="10" bg="#ADD1DB">
+    <chakra.nav px={{ base: 2, md: 8 }} paddingTop="10" bg="#ADD1DB">
       <List spacing="8">
-        <Text fontSize="xl" color="#fff">{t(`homePage:sideMenuHeader`)}...</Text>
+        <Text
+          fontSize="xl"
+          color="#fff"
+          display={{ base: "none", md: "block" }}
+        >
+          {t(`homePage:sideMenuHeader`)}...
+        </Text>
         {countries.map((key) => {
           return (
             <ListItem w="full" key={key}>
@@ -25,7 +31,9 @@ const SideMenu = () => {
                 fontSize="lg"
                 color="#fff"
               >
-                {t(`countries:${key}`)}
+                <chakra.span display={{ base: "none", md: "block" }}>
+                  {t(`countries:${key}`)}
+                </chakra.span>
               </Button>
             </ListItem>
           );

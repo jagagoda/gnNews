@@ -7,7 +7,8 @@
       "error": "Wystąpił błąd podczas komunikacji z serwisem"
     },
     "modal": {
-      "close": "Zamknij"
+      "close": "Zamknij",
+      "readMore": "Czytaj więcej"
     }
   },
   "countries": {
@@ -27,7 +28,7 @@
     "aboutMe": {
     "button": "O mnie",
     "header": "Trudności i frajda",
-    "content": "Blabla"
+    "content": "W aplikacji korzystałam z Redux oraz TypeScript, z którymi możnaby powiedzieć 'znamy się tylko z widzenia', więc zdecydowanie było to największe wyzwanie i zajęło mi najwięcej czasu. Natomiast dużą frajdę sprawiło mi poznawanie nowej biblioteki UI - Chakry, z której nigdy wcześniej nie korzystałam."
     },
     "sideMenuHeader": "Wiadomości z",
     "view": "Widok"

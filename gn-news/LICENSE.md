@@ -1,0 +1,2 @@
+# W projekcie użyto:
+

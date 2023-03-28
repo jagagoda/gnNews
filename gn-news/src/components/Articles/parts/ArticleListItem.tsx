@@ -35,9 +35,13 @@ const ArticleListItem: FC<Article> = ({
         h="full"
         alignItems="center"
         gap={4}
+        direction={{
+          base: "column",
+          md: "row"
+        }}
       >
         <Image
-        border="10px solid #ADD1DB"
+          border="10px solid #ADD1DB"
           rounded="md"
           w={300}
           h={200}
@@ -89,9 +93,7 @@ const ArticleListItem: FC<Article> = ({
             {source?.name}
           </chakra.span>
         </Flex>
-       
-      </Flex> 
-      
+      </Flex>
 
       <ArticleModal
         isOpen={isOpen}

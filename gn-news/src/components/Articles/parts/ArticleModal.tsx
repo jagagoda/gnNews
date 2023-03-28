@@ -14,6 +14,8 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { Article } from "../types";
+
 type Props = {
   isOpen: boolean;
   onClose: () => void;
@@ -49,10 +51,11 @@ const ArticleModal: FC<Props> = ({
               as={Link}
               to={url}
               variant="link"
+              target="_blank"
               color="#fff"
               _hover={{ color: "#708087" }}
             >
-              <Text>{url}</Text>
+              <Text> [{t("articles:modal.readMore")}]</Text>
             </Button>
           </chakra.div>
         </ModalBody>

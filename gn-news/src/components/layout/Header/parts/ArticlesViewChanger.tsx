@@ -39,9 +39,6 @@ const ArticlesViewChanger = () => {
             onClick={() => handleViewChange(key as View)}
             _hover={{ color: "#6B8187" }}
             size="md"
-            margin="0"
-            padding="0"
-            gap={0}
           />
         );
       })}
