@@ -9,6 +9,7 @@ Strona posiada dodatkowo tłumaczenie z języka angielskiego na język polski. J
 ## Uruchomienie aplikacji
 
 - pobrać repozytorium przy pomocy `git clone https://github.com/jagagoda/gnNews`
-- po otworzeniu repozytorium w edytorze należy zainstalować zależności za pomocą komendy `npm install`
+- należy przejść do folderu gn-news przy pomocy `cd gn-news`
+- należy zainstalować zależności za pomocą komendy `npm install`
 - dodać w folderze gn-news plik .env.local (na podstawie .env.example) z kluczem do API NEWS (VITE_API_KEY), który można pobrać z tej strony https://newsapi.org/s/poland-news-api
 - uruchomić aplikację za pomocą komendy `npm run dev`

@@ -36,4 +36,15 @@ describe("ArticleCard", () => {
     expect(element).not.toBeNull();
     expect(element.innerHTML).toBe(article.title);
   });
+
+  test("should article card render description", async () => {
+    setup(article);
+
+    const { findByTestId } = screen;
+
+    const element = await findByTestId("description");
+
+    expect(element).not.toBeNull();
+    expect(element.innerHTML).toBe(article.description);
+  });
 });

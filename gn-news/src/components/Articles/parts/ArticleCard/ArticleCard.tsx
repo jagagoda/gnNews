@@ -68,7 +68,7 @@ const ArticleCard: FC<Article> = ({
               >
                 {format(Date.parse(publishedAt), "dd.MM.yyyy HH:ii")}
               </chakra.span>
-              <chakra.span mx={2} fontWeight="bold" color="baseFontLight">
+              <chakra.span mx={2} fontWeight="bold" color="baseFontLight"   data-testid="source">
                 {source?.name}
               </chakra.span>
             </Flex>
@@ -82,7 +82,7 @@ const ArticleCard: FC<Article> = ({
             >
               {title}
             </Link>
-            <chakra.p mt={2} fontSize="sm" color="baseFontLight">
+            <chakra.p mt={2} fontSize="sm" color="baseFontLight"  data-testid="description">
               {description}
             </chakra.p>{" "}
           </Flex>
